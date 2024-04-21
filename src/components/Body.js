@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { ShimmerComp } from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -117,6 +118,13 @@ const Body = () => {
     //     return <ShimmerComp/>
     // }// this is called as conditional endering
 
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false) {
+        return (
+            <h1> You are Offline . Please Check Connection </h1>
+        )
+    }
  
     return listOfRest == 0 ? (<ShimmerComp/>) : (
         <div className="body">
@@ -159,9 +167,6 @@ const Body = () => {
                 <RestaurantCard resName = "KFC" cuisine = "Burger, Chicken, Fast Food"/> */}
                 {/* above is sending the data normally and below when we get data from the backend*/ }
                 {
-                    
-                    
-                    
                         filteredRest.map((restaurant) => (
                             <Link to={"/restaurant/"+restaurant.info.id} key = {restaurant.info.id} ><RestaurantCard resData = {restaurant}/></Link>
                         ))

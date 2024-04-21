@@ -1,46 +1,29 @@
-import { useEffect, useState } from "react";
 import { Await, redirect } from "react-router-dom";
 import { ShimmerComp } from "./shimmer";
 import { useParams } from "react-router-dom";
-import { swiggy_menu_api_URL } from "../utils/constants";
+import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
 
-    const [resInfo,setResInfo] = useState(null);
-
     const {resId} = useParams();
+
+    const resInfo = useRestaurantMenu(resId);
+    // Restaurant menu won't care about implementation of this hook
+    // doesn't care about how we are fetching the data
+
     
     // Params is an Object
 
-    useEffect(()=>{
-
-        fetchMenu();
-
-    },[])
-
-    const fetchMenu = async () => {
-
-        
-        const data = await fetch(swiggy_menu_api_URL + resId);
-        
-        
-        const json = await data.json();
-
-        
-        setResInfo(json.data);
-
-        // I will need state variables here
-
-    };
-
-    if((resInfo === null)) return <ShimmerComp/>;
+    if((resInfo === null)) {
+        console.log("null returned");
+        return <ShimmerComp/>;
+    }
 
     
     const {name, cuisines,costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
 
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    
-    console.log(itemCards);
 
 
     return (
