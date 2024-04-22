@@ -21,16 +21,15 @@ const RestaurantCard = (props) => {
 
     return (
         
-        <div className="res-card" style={{
-            backgroundColor : "#f0f0f0",
+        <div className="res-card m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-400" style={{
             // if we want to paas a javascript object then first define all things 
             // required and then we ca simply pass it inside the curley braces
 
         }}>
-            <img className="res-logo"
+            <img className="res-logo rounded-lg"
             alt="res-logo" src={CDN_URL+cloudinaryImageId}/>
-            <h3> {name} </h3>
-            <h4> {cuisines.join(", ")} </h4>
+            <h3 className="font-bold py-4 text-lg"> {name} </h3>
+            <h4 className=""> {cuisines.join(", ")} </h4>
             <h4> {avgRating} </h4>
             <h4> {deliveryTime + " minutes"} </h4>
             <h4> {costForTwo}</h4>

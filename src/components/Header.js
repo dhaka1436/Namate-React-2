@@ -11,31 +11,31 @@ export const Header = () => {
     
 
     return (
-        <div className="header">
+        <div className="header flex justify-between bg-pink-200 shadow-lg sm:bg-yellow-200">
             <div className="logo-container">
-                <img className="logo" src = {LOGO_URL} alt="logoimage"/>
+                <img className="logo w-56 " src = {LOGO_URL} alt="logoimage"/>
             </div>
 
-            <div className="nav-items">
-                <ul>
-                    <li>
+            <div className="nav-items flex items-center">
+                <ul className="flex p-4 m-4">
+                    <li className="px-4"> 
                         Online Status : {onlineStatus ? "🟢":"🔴"}
                     </li>
 
-                    <li>
+                    <li className="px-4">
                         <Link to = "/grocery">Grocery Store </Link>
                     </li>
-                    <li>
-                        <Link to="/" style={{backgroundColor : "orange" , textDecoration : "none" , color : "pink"}}> Home </Link>
+                    <li className="px-4">
+                        <Link to="/" style={{}}> Home </Link>
                     </li>
 
-                    <li>
+                    <li className="px-4">
                         <Link to="/about"> About Us </Link></li>
                     <li>
                         <Link to="/contact"> Contact us </Link>
                     </li>
 
-                    <li>cart</li>
+                    <li className="px-4">cart</li>
 
                     {/* <li className="log-in"><button type="submit" onClick={()=>{
                         if(btnName == "Log In") {setBtn(["Log Out"]);}

@@ -50,6 +50,8 @@ const Body = () => {
         
     };
 
+    
+
     // normal JS Variable
     let listOfRestJS = [{
         "info": {
@@ -129,13 +131,15 @@ const Body = () => {
     return listOfRest == 0 ? (<ShimmerComp/>) : (
         <div className="body">
 
-            <div className="filter">
+            <div className="filter flex">
 
-                <div className="Seach">
-                    <input className="search-box" type="text" value={searchText} onChange={(e)=>{
+                <div className="Seach m-4 p-4">
+                    
+                    <input className="search-box border border-solid border-black" type="text" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
                     }}/>
-                    <button type="submit" onClick={() => {
+
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" type="submit" onClick={() => {
                         // I should filter the restaurants cards and update the UI
                         if(searchText.length == 0) {
                             setFilteredRest(listOfRest);
@@ -151,18 +155,20 @@ const Body = () => {
                     }}>Search</button>
                 </div>
 
-                <button className="filter-btn" onClick={()=>{
-                    
-                    const filteredList = listOfRest.filter(res => res.info.avgRating >= 4.0);
+                <div className="Seach m-4 p-4 flex items-center">
+                    <button className="filter-btn m-4 p-4 bg-gray-100 rounded-lg" onClick={()=>{
+                        
+                        const filteredList = listOfRest.filter(res => res.info.avgRating >= 4.0);
 
-                    // not a proper way to update the state variable
-                    setListOfRest(filteredList); 
-                    // need to call it with the updated name one
+                        // not a proper way to update the state variable
+                        setListOfRest(filteredList); 
+                        // need to call it with the updated name one
 
-                }}> Top Rated Restaurants </button>
+                    }}> Top Rated Restaurants </button>
+                </div>
             </div>
             
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
                 {/* <RestaurantCard resName = "Meghna Foods" cuisine = "Biryani, Asian, Norht India"/>
                 <RestaurantCard resName = "KFC" cuisine = "Burger, Chicken, Fast Food"/> */}
                 {/* above is sending the data normally and below when we get data from the backend*/ }
