@@ -17,7 +17,7 @@ const RestaurantCard = (props) => {
 
       const {deliveryTime} = resData.info?.sla;
       
-      console.log(name+cloudinaryImageId);
+      
 
     return (
         

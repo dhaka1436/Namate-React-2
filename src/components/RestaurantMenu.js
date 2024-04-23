@@ -4,12 +4,15 @@ import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
 
     const {resId} = useParams();
 
     const resInfo = useRestaurantMenu(resId);
+    const [showIndex,setShowIndex] = useState(0);
+
     // Restaurant menu won't care about implementation of this hook
     // doesn't care about how we are fetching the data
 
@@ -20,8 +23,6 @@ const RestaurantMenu = () => {
         console.log("null returned");
         return <ShimmerComp/>;
     }
-
-    console.log(resInfo);
     const {name, cuisines,costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
 
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
@@ -44,7 +45,14 @@ const RestaurantMenu = () => {
             {/*Categoreis accodion */}
 
             {
-                categories.map((category) => <RestaurantCategory data = {category?.card?.card}/>)
+                categories.map((category,index) => (
+                    <RestaurantCategory 
+                        key = {category.card.card.title} 
+                        data = {category?.card?.card} 
+                        showItems={index === showIndex && true}
+                        setIndex = {() => setShowIndex(index)}
+                    />
+                ))
             }
             
         </div>
