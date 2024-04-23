@@ -21,14 +21,13 @@ class UserClass extends React.Component {
         const data = await fetch("https://api.github.com/users/dhaka1436");
         const json = await data.json();
 
-        console.log(json);
+       
 
         this.setState ({
 
             userInfo : json,
         });
 
-        console.log("Component Updation going on");  
     }
 
     componentDidUpdate() {

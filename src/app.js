@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import React , {lazy, Suspense} from "react";
+import React , {lazy, Suspense, useEffect, useState} from "react";
 import {Header} from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -9,23 +9,40 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { ShimmerComp } from "./components/shimmer";
 //import Grocery from "./components/Grocery";
+import UserContext from "./utils/UserContext";
 
 const styleCard = {
     backgroundColor: "#f0f0f0",
 }; 
 
 
+
+
 const Grocery = lazy(()=> import( "./components/Grocery"))
 
 
 const AppLayout = () => {
+
+    // autehntication
+    const[userName,setUserName] = useState();
+
+    useEffect(()=>{
+        // Make an API call and send username and password and got the data
+        const data = {
+            name : "Himanshu Dhaka"
+        }
+        setUserName(data.name);
+    })
+
     return (
-        <div className = "app">
-            <Header/>
+        <UserContext.Provider value={{loggedInUser : userName , setUserName}}>
+            <div className = "app">
+                <Header/>
             
-            <Outlet/>
+                <Outlet/>
             
-        </div>
+            </div>
+        </UserContext.Provider>
     )
 };
 

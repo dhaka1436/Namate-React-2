@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const RestaurantCard = (props) => {
 
-    console.log(props);
+   
     const {resData} = props; // destructuring of the Props
 
     const {

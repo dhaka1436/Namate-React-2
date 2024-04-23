@@ -1,11 +1,12 @@
 import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 
 import resOBJ from "../utils/mockData";
-import { useState } from "react"; 
+import { useState, useContext } from "react"; 
 import { useEffect } from "react";
 import { ShimmerComp } from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 
@@ -65,7 +66,9 @@ const Body = () => {
             <h1> You are Offline . Please Check Connection </h1>
         )
     }
- 
+
+    const {loggedInUser,setUserName} = useContext(UserContext);
+  
     return listOfRest == 0 ? (<ShimmerComp/>) : (
         <div className="body">
 
@@ -112,6 +115,12 @@ const Body = () => {
 
                         }}> Top Rated Restaurants </button>
                 </div>
+
+                <div className="Seach m-4 p-4 flex items-center">
+                    <label>UserName : </label>
+                    <input className="border border-black px-2 mx-2" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}/>
+                </div>
+
             </div>
             
             <div className="res-container flex flex-wrap">
