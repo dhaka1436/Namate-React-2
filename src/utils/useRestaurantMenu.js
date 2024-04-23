@@ -19,7 +19,7 @@ const useRestaurantMenu = (resId) => {
 
         setResInfo(json.data);
     }
-    console.log('returned');
+    
     return resInfo;
 }
 
