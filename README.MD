@@ -68,3 +68,12 @@ There 2 very imp hooks
 
 
 
+# Redux Toolkit
+    - Build our @reduxjs/toolkit and react-redux 
+    - Build our store
+    - Connecting the Store to our app
+    - Slice (CartList)
+    - Dispatch(action)
+    - Reading the data using concept of     Selector
+
+
