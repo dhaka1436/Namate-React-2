@@ -60,7 +60,7 @@ export const Header = () => {
                         </button>
                     </li>
 
-                    <li className="px-4 font-bold"> {loggedInUser} </li>
+                    {/* <li className="px-4 font-bold"> {loggedInUser} </li> */}
 
                 </ul>
 
