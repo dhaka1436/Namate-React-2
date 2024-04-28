@@ -16,8 +16,9 @@ const User = (props) => {
         <div className="user-card">
             
             <h2> Name : Himanshu </h2>
-            <h3> Location : Chd </h3>
-            <h4> Contact : @dhaka_1808 </h4>
+            <h3> Location : Chandigarh </h3>
+            <h4> Email : himanshudhaka987@gmail.com</h4>
+            <h4> Contact No. : +91 7973537221 </h4>
         </div>
     )
 }

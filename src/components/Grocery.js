@@ -1,6 +1,6 @@
 const Grocery = () => {
 
-    return <h1> Our online thing and it has lotss of components and all that stuff</h1>
+    return <h1 className="text-center text-6xl m-8"> Work in Progress </h1>
 };
 
 export default Grocery 

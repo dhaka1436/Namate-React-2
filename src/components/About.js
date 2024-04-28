@@ -14,19 +14,18 @@ class About extends React.Component{
 
         return (
             <div>
-                <h1> About Class Component</h1>
+                
                 <div>
                     
                     <UserContext.Consumer>
                         {({loggedInUser}) =><h1 className="font-bold">{loggedInUser}</h1>}
                     </UserContext.Consumer>
                 </div>
-                <h2> This is Web Show </h2>
 
 
                 {/* <UserClass name = "Anoushka Himanshu Dhaka "/>
                 <UserClass name = "Naina Himanshu Dhaka "/> */}
-                <UserClass/>
+                <User/>
             </div>
         );
     };
