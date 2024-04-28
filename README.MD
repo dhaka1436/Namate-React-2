@@ -1,79 +1,101 @@
-# Namaster React 
+# Namaste React 🚀
 
 
-/*
-
-1. Major 3 Components -> 
-    a) Header
-        Logo
-        NavItems,Cart
-    
-    b) Body
-        SearchComponent
-        Reastaurant Container
-            Reastaurant Cards
-                image
-                name of rest
-                star rating
-                eta
-                cussiness
-                time of delivery
-
-    
-    c) Footer
-        Copyright
-        Links
-        Address
-        Contact
-*/
-
-
-
-#Parcel
+# Parcel
 - Dev Build
 - Local Server
-- HMR -> Hot Module Replacement -> Automatically Refreshing the Page
-- File Watching Algorithm written in CPP
-- Caching Faster leads to faster builds
-- Image Optimisatoin as well
-- Minification of our files
-- Bundling i.e. bundlng all the files
-- Compressing the file -> Removing the extra and unwanted spaces
-- Consistent Hashing -> Keeping the track 
+- HMR = Hot Module Replacement
+- File Watching Algorithm - written in C++
+- Caching - Faster Builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Consistent Hashing
 - Code Splitting
-- Diffrential Bundling -> to support the older browsers
-- Diagnostics 
+- Differential Bundling - support older browsers
+- Diagnostic
 - Error Handling
-- Tree Shaking -> Parcel will remove the unused code for us to speed up the processes
- 
+- HTTPs
+- Tree Shaking - remove unused code
 - Different dev and prod bundles
-- 
-
-// there arw 2 types of export and import
-
-1. Default
-    export default Componenet
-    import Component from path
-
-2. Named one
-    export const Component
-    import {Component} from path
-
-#React Hooks
-(Normal JS function)
-There 2 very imp hooks
-1. useState(); To generate powerful state variables in React
-
-2. useEffect();
 
 
 
-# Redux Toolkit
-    - Build our @reduxjs/toolkit and react-redux 
-    - Build our store
-    - Connecting the Store to our app
-    - Slice (CartList)
-    - Dispatch(action)
-    - Reading the data using concept of     Selector
+# Namaste Food
 
 
+/**
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *    - RestaurantCard
+ *      - Img
+ *      - Name of Res, Star Rating, cuisine, delery tie
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
+
+
+
+ Two types of Export/Import
+
+
+- Default Export/Import
+
+export default Component;
+import Component from "path";
+
+
+- Named Export/Import
+
+export const Component;
+import {Component} from "path";
+
+
+# React Hooks
+ (Normal JS utility functions)
+- useState() - Superpowerful State Variables in react
+- useEffect()
+
+
+
+#  2 types Routing in web apps
+ - Client Side Routing
+ - Server Side Routing
+
+
+
+
+ # Redux Toolkit
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect our store to our app
+  - Slice (cartSlice)
+  - dispatch(action)
+  - Selector
+
+
+# Types of testing (devloper)
+ - Unit Testing
+ - Integration Testing
+ - End to End Testing - e2e testing
+
+# Setting up Testing in our app
+ - Install React Testing Library
+ - Installed jest
+ - Installed Babel dependencies
+ - Configure Babel 
+ - Configure Parcel Config file to disable default babel transpilation 
+ - Jest  - npx jest --init
+ - Install jsdom library
+ - Install @babel/preset-react - to make JSX work in test cases
+ - Include @babel/preset-react inside my babel config
+ - npm i -D @testing-library/jest-dom
+ 
