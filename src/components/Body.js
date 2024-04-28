@@ -43,7 +43,7 @@ const Body = () => {
 
     const fetchData = async () => {
         const data =
-            await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"); // super power given to us by browsers
+            await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"); // super power given to us by browsers
 
         // fetch will return us the promise
         const json = await data.json(); // converting it into json 
